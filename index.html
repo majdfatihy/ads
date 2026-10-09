@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>LinkFast — اختصر روابطك واربح من إعلاناتك</title>
+  <meta name="description" content="أداة اختصار الروابط الذكية — أنشئ روابط مع صفحة انتظار تعرض إعلاناتك وتكسب من كل تحميل يشاركه جمهورك.">
+  <meta name="keywords" content="اختصار روابط، ربح من الإعلانات، بدائل أدسنس، روابط مختصرة، ادستيرا">
+  <meta name="author" content="LinkFast">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://yoursite.com/">
+
+  <!-- Open Graph -->
+  <meta property="og:title"       content="LinkFast — اختصر روابطك واربح من إعلاناتك">
+  <meta property="og:description" content="أداة اختصار الروابط الذكية مع صفحة انتظار تعرض إعلاناتك.">
+  <meta property="og:image"       content="https://yoursite.com/assets/og-image.jpg">
+  <meta property="og:url"         content="https://yoursite.com/">
+  <meta property="og:type"        content="website">
+  <meta property="og:locale"      content="ar_EG">
+  <meta property="og:site_name"   content="LinkFast">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card"        content="summary_large_image">
+  <meta name="twitter:title"       content="LinkFast — اختصر روابطك واربح">
+  <meta name="twitter:description" content="أداة اختصار الروابط الذكية مع صفحة انتظار إعلانات.">
+  <meta name="twitter:image"       content="https://yoursite.com/assets/og-image.jpg">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔗</text></svg>">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="assets/css/style.css">
+
+  <!-- Schema.org -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "LinkFast",
+    "url": "https://yoursite.com",
+    "description": "أداة اختصار الروابط مع صفحة انتظار إعلانات للربح",
+    "applicationCategory": "UtilityApplication",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+  }
+  </script>
+</head>
+<body>
+
+<!-- ── Header ── -->
+<header id="site-header" role="banner"></header>
+
+<!-- ── Main ── -->
+<main>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-badge" data-i18n="heroBadge">🔗 أداة اختصار الروابط الاحترافية</div>
+      <h1>
+        <span data-i18n="heroTitle" class="accent">اختصر روابطك</span><br>
+        واكسب من إعلاناتك
+      </h1>
+      <p data-i18n="heroSub">أنشئ روابط ذكية مع صفحة انتظار تعرض إعلاناتك — جمهورك ينتظر، أنت تربح.</p>
+
+      <!-- Shortener Card -->
+      <div class="shortener-card">
+
+        <div class="form-group">
+          <label for="landingUrl">
+            <span data-i18n="labelLanding">رابط صفحة الإعلانات</span>
+            <span class="required">*</span>
+          </label>
+          <div class="input-wrap">
+            <span class="input-icon">🌐</span>
+            <input type="url" id="landingUrl"
+                   data-i18n-ph="labelLandingPH"
+                   placeholder="https://yoursite.com/ads.html"
+                   autocomplete="off" spellcheck="false">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="fileUrl">
+            <span data-i18n="labelFile">رابط الملف النهائي (التحميل)</span>
+            <span class="required">*</span>
+          </label>
+          <div class="input-wrap">
+            <span class="input-icon">📥</span>
+            <input type="url" id="fileUrl"
+                   data-i18n-ph="labelFilePH"
+                   placeholder="https://yoursite.com/file.zip"
+                   autocomplete="off" spellcheck="false">
+          </div>
+        </div>
+
+        <button class="btn btn-primary" onclick="shortenLink()">
+          <span data-i18n="btnShorten">🔗 اختصر الرابط الآن</span>
+        </button>
+
+        <!-- Result -->
+        <div class="result-box" id="resultBox">
+          <div class="result-label" data-i18n="resultLabel">✅ تم إنشاء الرابط بنجاح</div>
+          <div class="result-url-row">
+            <span class="result-url" id="resultUrl"></span>
+            <button class="copy-btn" id="copyResultBtn">نسخ</button>
+          </div>
+        </div>
+
+      </div><!-- /shortener-card -->
+    </div>
+  </section>
+
+  <!-- Previous Links -->
+  <section class="links-section">
+    <div class="container">
+      <h2 class="section-title" data-i18n="prevLinks">الروابط المنشأة مسبقاً</h2>
+
+      <div class="links-table-wrap">
+        <table class="links-table" role="table">
+          <thead>
+            <tr>
+              <th data-i18n="colLink">الرابط المختصر</th>
+              <th data-i18n="colLanding">صفحة الإعلانات</th>
+              <th data-i18n="colDate">التاريخ</th>
+              <th data-i18n="colActions">إجراءات</th>
+            </tr>
+          </thead>
+          <tbody id="linksBody"></tbody>
+        </table>
+
+        <div class="empty-state" id="emptyState">
+          <svg width="48" height="48" fill="none" viewBox="0 0 48 48">
+            <circle cx="24" cy="24" r="22" stroke="currentColor" stroke-width="2"/>
+            <path d="M18 24h12M24 18v12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+          <p style="font-weight:700;font-size:1rem;margin-bottom:6px" data-i18n="emptyTitle">لا توجد روابط بعد</p>
+          <p style="font-size:0.9rem" data-i18n="emptySub">أنشئ أول رابط مختصر الآن</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+</main>
+
+<!-- ── Footer ── -->
+<footer id="site-footer" role="contentinfo"></footer>
+
+<!-- Toast -->
+<div class="toast" id="global-toast"></div>
+
+<!-- Scripts -->
+<script src="assets/js/main.js"></script>
+<script src="assets/js/shortener.js"></script>
+</body>
+</html>

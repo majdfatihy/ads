@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>اتصل بنا | LinkFast</title>
+  <meta name="description" content="تواصل مع فريق LinkFast — نحن هنا للمساعدة.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://yoursite.com/contact.html">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔗</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+<header id="site-header"></header>
+<main>
+  <div class="page-hero">
+    <div class="container">
+      <nav class="breadcrumb">
+        <a href="index.html">الرئيسية</a><span>›</span><span>اتصل بنا</span>
+      </nav>
+      <h1>اتصل بنا</h1>
+      <p>نرد عادةً في غضون 24-48 ساعة</p>
+    </div>
+  </div>
+
+  <section class="section">
+    <div class="container">
+      <div class="contact-grid">
+
+        <!-- معلومات التواصل -->
+        <div class="contact-info">
+          <div class="contact-card">
+            <div class="contact-card-icon">📺</div>
+            <div>
+              <h4>قناة يوتيوب</h4>
+              <a href="https://www.youtube.com/playlist?list=PLRl_JqdizTBw" target="_blank" rel="noopener">
+                بدائل أدسنس | الربح من المواقع
+              </a>
+            </div>
+          </div>
+
+          <div class="contact-card">
+            <div class="contact-card-icon">✉️</div>
+            <div>
+              <h4>البريد الإلكتروني</h4>
+              <a href="mailto:contact@yoursite.com">contact@yoursite.com</a>
+            </div>
+          </div>
+
+          <div class="contact-card">
+            <div class="contact-card-icon">💬</div>
+            <div>
+              <h4>تيليجرام</h4>
+              <a href="https://t.me/yourchannel" target="_blank" rel="noopener">@yourchannel</a>
+            </div>
+          </div>
+
+          <div class="contact-card">
+            <div class="contact-card-icon">⏱️</div>
+            <div>
+              <h4>وقت الاستجابة</h4>
+              <p>24 - 48 ساعة عمل</p>
+            </div>
+          </div>
+
+          <!-- بطاقة القناة -->
+          <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-lg);padding:24px;border-inline-start:4px solid #ff0000">
+            <p style="font-size:0.9rem;color:var(--text-secondary);margin-bottom:12px">
+              📺 شاهد كيف أنشأنا هذا الموقع خطوة بخطوة — وتعرف على أفضل بدائل أدسنس للربح من موقعك أو مدونتك
+            </p>
+            <a href="https://www.youtube.com/playlist?list=PLRl_JqdizTBw"
+               target="_blank" rel="noopener" class="footer-yt-link">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="#ff0000">
+                <path d="M23.5 6.2a3 3 0 00-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 00.5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 002.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 002.1-2.1C24 15.9 24 12 24 12s0-3.9-.5-5.8zM9.7 15.5V8.5l6.3 3.5-6.3 3.5z"/>
+              </svg>
+              مشاهدة قائمة التشغيل كاملة
+            </a>
+          </div>
+        </div>
+
+        <!-- نموذج التواصل -->
+        <div class="contact-form-card">
+          <h3>أرسل رسالة</h3>
+          <div class="contact-form">
+            <div class="form-group">
+              <label for="c-name">الاسم</label>
+              <input type="text" id="c-name" placeholder="اسمك الكريم" autocomplete="name">
+            </div>
+            <div class="form-group">
+              <label for="c-email">البريد الإلكتروني</label>
+              <input type="email" id="c-email" placeholder="email@example.com" autocomplete="email" dir="ltr">
+            </div>
+            <div class="form-group">
+              <label for="c-subject">الموضوع</label>
+              <select id="c-subject">
+                <option value="">اختر الموضوع</option>
+                <option value="support">دعم فني</option>
+                <option value="ads">استفسار عن الإعلانات</option>
+                <option value="collab">تعاون</option>
+                <option value="other">أخرى</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="c-msg">الرسالة</label>
+              <textarea id="c-msg" placeholder="اكتب رسالتك هنا..."></textarea>
+            </div>
+            <button class="btn btn-primary" onclick="sendContact()">
+              📨 إرسال الرسالة
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer id="site-footer"></footer>
+<div class="toast" id="global-toast"></div>
+<script src="assets/js/main.js"></script>
+<script>
+  function sendContact() {
+    const name    = document.getElementById('c-name').value.trim();
+    const email   = document.getElementById('c-email').value.trim();
+    const subject = document.getElementById('c-subject').value;
+    const msg     = document.getElementById('c-msg').value.trim();
+
+    if (!name || !email || !msg) {
+      showToast('⚠️ يرجى ملء جميع الحقول المطلوبة');
+      return;
+    }
+
+    const mailSubject = encodeURIComponent(`[LinkFast] ${subject || 'رسالة جديدة'} — ${name}`);
+    const mailBody    = encodeURIComponent(`الاسم: ${name}\nالبريد: ${email}\n\nالرسالة:\n${msg}`);
+    window.location.href = `mailto:contact@yoursite.com?subject=${mailSubject}&body=${mailBody}`;
+  }
+</script>
+</body>
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>جارٍ التحميل... | LinkFast</title>
+  <meta name="robots" content="noindex, nofollow">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⏳</text></svg>">
+  <link rel="stylesheet" href="assets/css/style.css">
+
+  <style>
+    /* صفحة التحويل لا تحتاج فوتر عادي */
+    .redirect-page { padding-top: 40px; padding-bottom: 40px; }
+    .landing-iframe {
+      position: fixed;
+      width: 1px; height: 1px;
+      opacity: 0; pointer-events: none;
+      border: none;
+    }
+  </style>
+</head>
+<body>
+
+<!-- iframe مخفي لتحميل صفحة الإعلانات في الخلفية -->
+<iframe id="landing-frame" class="landing-iframe" title="ads" loading="lazy"></iframe>
+
+<!-- Header -->
+<header id="site-header"></header>
+
+<main>
+  <div class="redirect-page">
+    <div class="container">
+      <div class="redirect-card">
+
+        <!-- Icon -->
+        <div style="font-size:2.5rem;margin-bottom:16px">⏳</div>
+
+        <h2 id="redirect-msg">جارٍ تجهيز رابط التحميل...</h2>
+        <p id="redirect-sub">يرجى الانتظار حتى ينتهي العداد لتظهر زر التحميل</p>
+
+        <!-- Countdown Circle -->
+        <div class="countdown-wrap">
+          <svg class="countdown-svg" viewBox="0 0 130 130">
+            <circle class="countdown-track"    cx="65" cy="65" r="55"/>
+            <circle class="countdown-progress" id="countdown-progress" cx="65" cy="65" r="55"/>
+          </svg>
+          <div class="countdown-number">
+            <span id="countdown-num">15</span>
+            <small id="sec-label">ثانية</small>
+          </div>
+        </div>
+
+        <!-- Ad slot (mobile or desktop detected by JS) -->
+        <div class="redirect-ad-slot" id="redirect-ad">
+          <!-- ════════════════════════════════════════════════
+               إعلان متجاوب تلقائي — يظهر المقاس المناسب
+               للهاتف: 320×100 أو 320×50
+               للكمبيوتر: 728×90 أو 300×250
+               استبدل هذا التعليق بكود الإعلان من شبكتك
+               ════════════════════════════════════════════════ -->
+          <span>📢 إعلان متجاوب<br>
+            <small style="color:var(--text-muted)">استبدل هذا بكود إعلانك</small>
+          </span>
+        </div>
+
+        <!-- Download Button (hidden until countdown ends) -->
+        <a href="#" id="download-btn" class="download-btn" rel="noopener" target="_blank">
+          ⬇️ <span id="dl-label">تحميل الملف</span>
+        </a>
+
+      </div><!-- /redirect-card -->
+    </div>
+  </div>
+</main>
+
+<footer id="site-footer"></footer>
+<div class="toast" id="global-toast"></div>
+
+<script src="assets/js/main.js"></script>
+<script src="assets/js/redirect.js"></script>
+<script>
+  // ترجمة عناصر صفحة التحويل بعد تحديد اللغة
+  document.addEventListener('DOMContentLoaded', () => {
+    setTimeout(() => {
+      const secLabel = document.getElementById('sec-label');
+      const dlLabel  = document.getElementById('dl-label');
+      const msg      = document.getElementById('redirect-msg');
+      const sub      = document.getElementById('redirect-sub');
+      if (secLabel) secLabel.textContent = currentLang === 'ar' ? 'ثانية' : 'sec';
+      if (dlLabel)  dlLabel.textContent  = currentLang === 'ar' ? 'تحميل الملف' : 'Download File';
+      if (msg && msg.textContent.includes('جارٍ'))
+        msg.textContent = currentLang === 'ar'
+          ? 'جارٍ تجهيز رابط التحميل...'
+          : 'Preparing your download link...';
+      if (sub)
+        sub.textContent = currentLang === 'ar'
+          ? 'يرجى الانتظار حتى ينتهي العداد لتظهر زر التحميل'
+          : 'Please wait for the countdown to finish, then the download button will appear.';
+    }, 100);
+  });
+</script>
+</body>
+</html>
